@@ -30,20 +30,18 @@ def remove_pycache():
 def main():
     remove_pycache()
     root_dir = os.getcwd()
-    utils_zip_src_path = root_dir + f"/src"
-    utils_zip_target_path = root_dir + f"/dependencies/utils"
-    lambda_zip_src_path = root_dir + f"/src/lambda"
-    lambda_zip_target_path = root_dir + f"/lambda/lambda_function"
+    utils_zip_src_path = root_dir + "/src"
+    utils_zip_target_path = root_dir + "/dependencies/utils"
+    lambda_zip_src_path = root_dir + "/src/lambda"
+    lambda_zip_target_path = root_dir + "/lambda/lambda_function"
     connector_zip_src_path = root_dir
-    connector_zip_target_path = root_dir + f"/dependencies/connector"
+    connector_zip_target_path = root_dir + "/dependencies/connector"
     print("Process started ....")
-    zip_utils(
-        utils_zip_src_path, utils_zip_target_path, base_dir="utils"
-    )
+    zip_utils(utils_zip_src_path, utils_zip_target_path, base_dir="utils")
     zip_utils(lambda_zip_src_path, lambda_zip_target_path)
-    zip_utils(connector_zip_src_path, connector_zip_target_path, base_dir='connector')
+    zip_utils(connector_zip_src_path, connector_zip_target_path, base_dir="connector")
     print("Process completed ....")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
